@@ -9,19 +9,20 @@ Initially this project is used to read Energy data of Solar Inverter.
     4 MQTT Server connection status
 
 ### Software Functionality/feature
-    1, MODBUS master implementation on Software Serial.
-    2, Multiple Slave data read supported if Modbus slaves having 485 support.
-    3, Single slave data supported if Modbus slaves having 232 support.
-    4, ESP8266 ACT as WIFI AP and host all data over WEBPAGE
-        4.1, WIFI AP settings can changed from Settings.h file
-    5, ESP8266 ACT as WIFI client. Get IP form WIFI router (DHCP server) host Webpage over Webpage.
-            5.1, WIFI router SSID and Password can change from Settings.h file
-    6, Connects with MQTT server to send all energy related data to Server.
-            6.1, MQTT server settings can changed from setting
+    1 MODBUS master implementation on Software Serial.
+    2 Multiple Slave data read supported if Modbus slaves having 485 support.
+    3 Single slave data supported if Modbus slaves having 232 support.
+    4 ESP8266 ACT as WIFI AP and host all data over WEBPAGE
+        4.1 WIFI AP settings can changed from Settings.h file
+    5 ESP8266 ACT as WIFI client. Get IP form WIFI router (DHCP server) host Webpage over Webpage.
+            5.1 WIFI router SSID and Password can change from Settings.h file
+    6 Connects with MQTT server to send all energy related data to Server.
+            6.1 MQTT server settings can changed from setting
 
 
 ## Microcontroller
     ESP8266
+    
 ## Signal Converter
     485 to TTL converter.
     232 to TTL converter.
