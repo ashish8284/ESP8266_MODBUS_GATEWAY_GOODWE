@@ -1,22 +1,22 @@
 # ESP8266_Modbus_Gateway
 Functionality
 Purpose of this project is to read Data from any MODBUS supported Slave devices and send all data using MQTT protocol.
-Initiall this project is used to read Energy data of Solar Inverter.
-Hardware Functionality/Feture
-    1, Read MODBUS 485 deviece DATA (required 485 to TTL converter)
-    2, Read MODBUS 232 deviece DATA (required 232 to TTL converter)
+Initially this project is used to read Energy data of Solar Inverter.
+Hardware Functionality/feature
+    1, Read MODBUS 485 device DATA (required 485 to TTL converter)
+    2, Read MODBUS 232 device DATA (required 232 to TTL converter)
     3, WIFI connection status LED
     4, MQTT Server connection status
 
-Software Functionality/Feture
+Software Functionality/feature
     1, MODBUS master implementation on Software Serial.
-    2, Multiple Slave data read supported if Modbus slaves haveing 485 support.
-    3, Single slave data supported if modubs slves having 232 support.
+    2, Multiple Slave data read supported if Modbus slaves having 485 support.
+    3, Single slave data supported if Modbus slaves having 232 support.
     4, ESP8266 ACT as WIFI AP and host all data over WEBPAGE
-        4.1, WIFI AP settings can changed from Settings.H file
-    5, ESP8266 ACT as WIFI client. Get IP form WIFI router(DHCP server) host Webpage over Webpage.
-            5.1, WIFI router SSID and Password can changed from Settings.H file
-    6, Connects with MQTT server to send all energy relted data to Server.
+        4.1, WIFI AP settings can changed from Settings.h file
+    5, ESP8266 ACT as WIFI client. Get IP form WIFI router (DHCP server) host Webpage over Webpage.
+            5.1, WIFI router SSID and Password can change from Settings.h file
+    6, Connects with MQTT server to send all energy related data to Server.
             6.1, MQTT server settings can changed from setting
 
 
@@ -26,7 +26,7 @@ Signal Converter
     485 to TTL converter.
     232 to TTL converter.
 
-If Converter is 5VDC operated then Level shifter(WiringA) or potential devider(WiringB) to be incerterd between Rx pin connection.
+If Converter is 5VDC operated then Level shifter (WiringA) or potential divider (WiringB) to be inserted between Rx pin connection.
 
 Level shifter example
 WiringA
@@ -35,7 +35,7 @@ WiringA
     Connect 3.3V/LV pin of level shifter to 3.3v Bus.
     Refer Below Schematic
  ______________       __________________               ____________________________        
-|  ESP8266     |     |  Level Shifter    |            |  ConverterIN               |        
+|  ESP8266     |     |  Level Shifter    |            |  Converter IN              |        
 |  3.3VDC      |-----| 3.3v          5v  |---5VDC     |                            |
 |  GPIO12(Rx)  |-----| LV1           HV1 |------------|    Rx pin                  |
 |  GPIO13(Tx)  |-----| LV2           HV2 |------------|    Tx pin                  |
@@ -46,7 +46,7 @@ WiringA
 Potential Divider
 WiringB
  ______________                    1k 0hm                __________________________________        
-|  ESP8266     |               _______                  |          ConverterIN             |      
+|  ESP8266     |               _______                  |          Converter IN            |      
 |  GPIO12(Rx)  |---------x----|_______|-----------------|    Rx pin                        |
 |              |         |                              |                                  |
 |              |         |      2k ohm                  |                                  |
@@ -59,7 +59,7 @@ WiringB
 Wiring for 484 to TTL Converter
 GPOI can changed from Settings.h file
 VCC pin of converter required to be connected with 3.3V DC
-In case Converter is 5VDC operated then below connecton will damaged RX pin of ESP8266.
+In case Converter is 5VDC operated then below connection will damaged RX pin of ESP8266.
 Use Level shifter to protect ESP8266 RX pin(as shown in Wiring A)
 WiringB
  ______________            ___________________________________          ____________________ 
@@ -76,7 +76,7 @@ WiringB
 Wiring for 232 to TTL Converter
 GPOI can changed from Settings.h file
 VCC pin of converter required to be connected with 3.3V DC
-In case Converter is 5VDC operated then below connecton will damaged RX pin of ESP8266.
+In case Converter is 5VDC operated then below connection will damaged RX pin of ESP8266.
 Use Level shifter to protect ESP8266 RX pin(as shown in Wiring A)
 
 WiringC
@@ -98,12 +98,15 @@ Solar Inverters Checked with this module
 01:- Growatt Solar inverter.
         Webpage support working
 02:- Goodwe Solar inverter.
-        Webpage not configured as its code is devloped for multiple slaves. Webpage implementation is pending for multiple slaves.
+        Webpage not configured as its code is developed for multiple slaves. Webpage implementation is pending for multiple slaves.
 
-Currently two different code is there for both solar inverter.
-Future Plan:- 
-    Provide single code for all Modbus supported merers by introducing Address templets.
+Currently two different code is there for both solar inverters.
+Future Plan: - 
+    Provide single code for all Modbus supported meter by introducing Address templets.
     Multiple slave data monitoring webpage by drill down buttion.
-    All setting configration over Webpage.
-    Wifi AP and Slave functionality selection using Webui.( initial boot as AP & after configration Final operation mode decided).
-    Buf fixing for Modbus connection timeout status.
+    All setting configuration over Webpage.
+    Wifi AP and Slave functionality selection using Webui.( initial boot as AP & after configuration Final operation mode decided).
+    Bug fixing for Modbus connection timeout status.
+
+
+
