@@ -24,8 +24,8 @@ Initially this project is used to read Energy data of Solar Inverter.
     ESP8266
     
 ## Signal Converter
-   [485 to TTL converter]https://www.electronicscomp.com/max485-ttl-to-rs485-converter-module?gclid=CjwKCAiAkJKCBhAyEiwAKQBCkoxbn-8rlNY114U2x71h_flPPNCf_5Ni4GM02lLAEJ38-YPnXbK6nhoCUAcQAvD_BwE
-    [232 to TTL converter]https://robu.in/product/rs232-ttl-serial-interface-module/?gclid=CjwKCAiAkJKCBhAyEiwAKQBCkgIN-yrhdd6_wyIXP5qCthopTfJAA-sbHb9fbLRpuPTNscY9_d2LrRoCVokQAvD_BwE
+   [485 to TTL converter](https://www.electronicscomp.com/max485-ttl-to-rs485-converter-module?gclid=CjwKCAiAkJKCBhAyEiwAKQBCkoxbn-8rlNY114U2x71h_flPPNCf_5Ni4GM02lLAEJ38-YPnXbK6nhoCUAcQAvD_BwE)
+    [232 to TTL converter](https://robu.in/product/rs232-ttl-serial-interface-module/?gclid=CjwKCAiAkJKCBhAyEiwAKQBCkgIN-yrhdd6_wyIXP5qCthopTfJAA-sbHb9fbLRpuPTNscY9_d2LrRoCVokQAvD_BwE)
         
 http://github.com - automatic!
 [GitHub](http://github.com)
