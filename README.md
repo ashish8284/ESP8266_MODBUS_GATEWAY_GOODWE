@@ -21,7 +21,7 @@ Initially this project is used to read Energy data of Solar Inverter.
 
 
 ## Microcontroller
-    ESP8266
+   [ESP8266](https://robu.in/product/latest-esp-12f-esp8266-wifi-module-ap-station-remote-serial-wireless-iot-board/?gclid=CjwKCAiAkJKCBhAyEiwAKQBCkpUjV3BJXH3z_B8n-wsWe8fHrG7M4icrK1cMzKCAamV55D67_iHGvxoCxpwQAvD_BwE)
     
 ## Signal Converter
    
@@ -48,16 +48,16 @@ WiringA
 
 
 ## Potential Divider
-WiringB
- ______________                    1k 0hm                __________________________________        
-|  ESP8266     |               _______                  |          Converter IN            |      
-|  GPIO12(Rx)  |---------x----|_______|-----------------|    Rx pin                        |
-|              |         |                              |                                  |
-|              |         |      2k ohm                  |                                  |
-|              |         |     _______                  |                                  |
-|              |         x ---|_______|---Ground        |                                  |               
-|              |                                        |                                  |
-|______________|                                        |__________________________________|  
+###WiringB
+             ______________                    1k 0hm                __________________________________        
+            |  ESP8266     |               _______                  |          Converter IN            |      
+            |  GPIO12(Rx)  |---------x----|_______|-----------------|    Rx pin                        |
+            |              |         |                              |                                  |
+            |              |         |      2k ohm                  |                                  |
+            |              |         |     _______                  |                                  |
+            |              |         x ---|_______|---Ground        |                                  |               
+            |              |                                        |                                  |
+            |______________|                                        |__________________________________|  
 
 
 ## Wiring for 484 to TTL Converter
@@ -65,17 +65,18 @@ GPOI can changed from Settings.h file
 VCC pin of converter required to be connected with 3.3V DC
 In case Converter is 5VDC operated then below connection will damaged RX pin of ESP8266.
 Use Level shifter to protect ESP8266 RX pin(as shown in Wiring A)
-WiringB
- ______________            ___________________________________          ____________________ 
-|  ESP8266     |          |  ConverterIN     Converter out    |        | Modbus Slave ID1   |
-|  GPIO12(Rx)  |--------- |    Rx pin              A+         |--------|                    |
-|  GPIO13(Tx)  |--------- |    Tx pin              B-         |--------|                    |
-|______________|          |___________________________________|   | |  |____________________|
-                                                                  | |    ____________________     
-                                                                  | |  | Modbus Slave IDN   |
-                                                                  | ---|                    |
-                                                                  -----|                    |
-                                                                       |____________________|
+
+###WiringB
+         ______________            ___________________________________          ____________________ 
+        |  ESP8266     |          |  ConverterIN     Converter out    |        | Modbus Slave ID1   |
+        |  GPIO12(Rx)  |--------- |    Rx pin              A+         |--------|                    |
+        |  GPIO13(Tx)  |--------- |    Tx pin              B-         |--------|                    |
+        |______________|          |___________________________________|   | |  |____________________|
+                                                                          | |    ____________________     
+                                                                          | |  | Modbus Slave IDN   |
+                                                                          | ---|                    |
+                                                                          -----|                    |
+                                                                               |____________________|
 
 ## Wiring for 232 to TTL Converter
 GPOI can changed from Settings.h file
@@ -83,20 +84,20 @@ VCC pin of converter required to be connected with 3.3V DC
 In case Converter is 5VDC operated then below connection will damaged RX pin of ESP8266.
 Use Level shifter to protect ESP8266 RX pin(as shown in Wiring A)
 
-WiringC
- ______________            _____________________________________                 ___________________ 
-|  ESP8266     |          |  ConverterIN     Converter Out DB9  |               | Modbus Slave IDN  |
-|  GPIO12(Rx)  |--------- |    Rx pin           1               |-x           x-|         1         |
-|  GPIO13(Tx)  |--------- |    Tx pin           2               |---------------|         3         |
-|  Groudn      |--------- |    Ground           3               |---------------|         2         |
-|______________|          |                     4               |-x           x-|         4         |
-                          |                     5               |---------------|         5         |
-                          |                     6               |-x           x-|         6         |
-                          |                     7               |-x           x-|         7         |                
-                          |                     8               |-x           x-|         8         |
-                          |                     9               |-x           x-|         9         |
-                          |_____________________________________|-x           x-|___________________|
-                          
+###WiringC
+             ______________            _____________________________________                 ___________________ 
+            |  ESP8266     |          |  ConverterIN     Converter Out DB9  |               | Modbus Slave IDN  |
+            |  GPIO12(Rx)  |--------- |    Rx pin           1               |-x           x-|         1         |
+            |  GPIO13(Tx)  |--------- |    Tx pin           2               |---------------|         3         |
+            |  Groudn      |--------- |    Ground           3               |---------------|         2         |
+            |______________|          |                     4               |-x           x-|         4         |
+                                      |                     5               |---------------|         5         |
+                                      |                     6               |-x           x-|         6         |
+                                      |                     7               |-x           x-|         7         |                
+                                      |                     8               |-x           x-|         8         |
+                                      |                     9               |-x           x-|         9         |
+                                      |_____________________________________|-x           x-|___________________|
+
                           
 ## Solar Inverters Checked with this module
 01:- Growatt Solar inverter.
