@@ -1,6 +1,6 @@
 void jsonpack() {
   char msg[512];
-  char Topic[12] ;
+  char Topic[25] ;
   StaticJsonDocument<512> doc;
   if (Slave_Sts1 == 0 && Slave_Sts2 == 0) {
     doc["MBSTS"] = "1";
@@ -35,17 +35,17 @@ void jsonpack() {
   ENR["TOT"] = Energy_Total;
   ENR["TOD"] = Energy_Today;
   serializeJson(doc, msg);
-  snprintf(Topic, 20, "Goodwe/Slave-%ld", slave_id);
+  snprintf(Topic, 25, MQTT_Topic, slave_id);
   if (MQTT_Enable)client.publish(Topic, msg);
-  Serial.print(Topic); Serial.print("-"); Serial.println(msg);
+  Serial.print(Topic); Serial.print(":"); Serial.println(msg);
 }
 void jsonpack_01() {
   char msg01[16];
-  char Topic[12] ;
+  char Topic[25] ;
   StaticJsonDocument<16> doc;
   doc["MBSTS"] = 0;
   serializeJson(doc, msg01);
-  snprintf(Topic, 20, "Goodwe/pph/Slave-%ld", slave_id);
-  if(MQTT_Enable)client.publish(Topic, msg01);
-  Serial.print(Topic); Serial.print("-"); Serial.println(msg01);
+  snprintf(Topic, 25, MQTT_Topic, slave_id);
+  if (MQTT_Enable)client.publish(Topic, msg01);
+  Serial.print(Topic); Serial.print(":"); Serial.println(msg01);
 }
