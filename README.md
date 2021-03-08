@@ -1,14 +1,14 @@
 # ESP8266_Modbus_Gateway
-##Functionality
+## Functionality
 Purpose of this project is to read Data from any MODBUS supported Slave devices and send all data using MQTT protocol.
 Initially this project is used to read Energy data of Solar Inverter.
-###Hardware Functionality/feature
+### Hardware Functionality/feature
     1, Read MODBUS 485 device DATA (required 485 to TTL converter)
     2, Read MODBUS 232 device DATA (required 232 to TTL converter)
     3, WIFI connection status LED
     4, MQTT Server connection status
 
-###Software Functionality/feature
+### Software Functionality/feature
     1, MODBUS master implementation on Software Serial.
     2, Multiple Slave data read supported if Modbus slaves having 485 support.
     3, Single slave data supported if Modbus slaves having 232 support.
