@@ -37,7 +37,7 @@ void setup() {
   digitalWrite(LED, HIGH);
   S.begin(9600, SWSERIAL_8N1);
   Slave_ID = Start_ID;
-  mb.begin(&S);
+  mb.begin(&S,DE_RE);
   mb.master();
   if (MQTT_Enable) {
     setup_wifi();
