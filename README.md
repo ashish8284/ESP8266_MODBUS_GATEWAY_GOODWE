@@ -1,4 +1,7 @@
 # ESP8266_Modbus_Gateway
+
+#Thanks to creater of Modbus library : https://github.com/emelianov/modbus-esp8266
+
 ## Functionality
 Purpose of this project is to read Data from any MODBUS supported Slave devices and send all data using MQTT protocol.
 Initially this project is used to read Energy data of Solar Inverter.
