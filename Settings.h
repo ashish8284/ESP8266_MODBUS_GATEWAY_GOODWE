@@ -1,12 +1,9 @@
 //TX & RX Pin assignment
-int Rx = 12; 
-int Tx = 13;
-int LED = 2;
-
+int Rx = 12; //RX pin which will connect to RX pin of TTL to 232  or TTL to 485 converter
+int Tx = 13; //TX pin which will connect to TX pin of TTL to 232  or TTL to 485 converter
+int LED = 2; //Status LED pin. Blinks if Gateway is trying to connects with WIFI or MQTT server. Steady if connectino is successful.
+int DE_RE = 4; // If Max 485 to ttl converter is used then this pin required to connect with DE and RE pin of Module.
 //Wifi router Credentials
-//const char* ssid             = "Ashish Patel02";
-//const char* passuint16_t     = "Aradhya$146";
-
 const char* ssid             = "CG01_SOLAR_AP";
 const char* passuint16_t     = "adani@123";
 
