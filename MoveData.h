@@ -43,4 +43,5 @@ void Movedata() {
     Serial.print( Energy_Total  ); Serial.print(",");
     Serial.print( Energy_Today  ); Serial.println(",");
 */
+ArduinoOTA.handle();
 }

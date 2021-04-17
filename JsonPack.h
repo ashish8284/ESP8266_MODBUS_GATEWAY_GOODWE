@@ -38,6 +38,7 @@ void jsonpack() {
   snprintf(Topic, 25, MQTT_Topic, slave_id);
   if (MQTT_Enable)client.publish(Topic, msg);
   Serial.print(Topic); Serial.print(":"); Serial.println(msg);
+  ArduinoOTA.handle();
 }
 void jsonpack_01() {
   char msg01[16];
@@ -48,4 +49,5 @@ void jsonpack_01() {
   snprintf(Topic, 25, MQTT_Topic, slave_id);
   if (MQTT_Enable)client.publish(Topic, msg01);
   Serial.print(Topic); Serial.print(":"); Serial.println(msg01);
+  ArduinoOTA.handle();
 }

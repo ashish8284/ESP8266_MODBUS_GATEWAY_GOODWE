@@ -6,6 +6,7 @@ bool reconnect() {
       Serial.println("connected");
       client.publish("Goodwe/Data", "100");
       digitalWrite(LED, LOW);
+        ArduinoOTA.handle();
     }
     else
     {

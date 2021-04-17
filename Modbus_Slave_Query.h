@@ -6,6 +6,7 @@ void MBslaveQuery(int slaveID) {
       mb.readHreg(slaveID, 768, Mread, 20, cbWrite1);
       Slave_Sts1 = MB_STS1;
       Call_Stp = 2;
+      ArduinoOTA.handle();
     }
   }
   if (cbreturn1 & Call_Stp == 2) {//Read last reg.
@@ -13,6 +14,7 @@ void MBslaveQuery(int slaveID) {
       mb.readHreg(slaveID, 800, Mread1, 1, cbWrite2);
       Slave_Sts2 = MB_STS2;
       Call_Stp = 3;
+      ArduinoOTA.handle();
     }
   }
   if (cbreturn2 & Call_Stp == 3) {//move buffer data
