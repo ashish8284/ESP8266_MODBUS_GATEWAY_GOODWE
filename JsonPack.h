@@ -49,5 +49,7 @@ void jsonpack_01() {
   snprintf(Topic, 25, MQTT_Topic, slave_id);
   if (MQTT_Enable)client.publish(Topic, msg01);
   Serial.print(Topic); Serial.print(":"); Serial.println(msg01);
+  Serial.print(Wifi_Status); Serial.print("\t"); Serial.println(MQTT_Status);
+  Webpabe_Update();
   ArduinoOTA.handle();
 }

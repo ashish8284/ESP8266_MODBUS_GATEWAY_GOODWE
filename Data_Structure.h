@@ -21,3 +21,16 @@ int   Error_Message_H ;    // 784
 int   Error_Message_L ;    // 785
 float Energy_Total ;  // 786,787
 float  Energy_Today ;
+
+String Wifi_Status = "Null" ;
+String MQTT_Status = "Null" ;
+String Wifi_CL_IP = "Null" ;
+String Wifi_Sig_Strenth = "Null";
+/*String Energy_Total = "Null";
+  String Panel_Volatge = "Null";
+  String Panel_Amps = "Null";
+  String Panel_Power = "Null";
+  String Fault = "Null";
+  String Warning = "Null";
+  String CL_IP = "Null";
+*/

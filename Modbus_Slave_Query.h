@@ -23,8 +23,10 @@ void MBslaveQuery(int slaveID) {
     if (Energy_Total != Previous_Enr) {
       jsonpack();
       Previous_Enr = Energy_Total;
+      ArduinoOTA.handle();
     }
     else {
+      ArduinoOTA.handle();
       jsonpack_01();
     }
     Call_Stp = 1;
@@ -33,7 +35,9 @@ void MBslaveQuery(int slaveID) {
     Slave_ID++;
     if (Slave_ID > End_ID) {
       Slave_ID = Start_ID;
+      ArduinoOTA.handle();
     }
     LastScan = millis();
+    ArduinoOTA.handle();
   }
 }

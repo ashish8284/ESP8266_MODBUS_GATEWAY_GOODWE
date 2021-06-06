@@ -1,3 +1,5 @@
+#include "ESPAsyncWebServer.h"
+#include <WiFiUdp.h>
 #include <ModbusRTU.h>
 #include <SoftwareSerial.h>
 #include <ArduinoJson.h>
@@ -20,6 +22,8 @@ PubSubClient client(Goodwe_MT);
 #include "Settings.h"
 #include "IntToFloat.h"
 #include "Data_Structure.h"
+#include "Webpage.h"
+#include "WebserverSetup.h"
 #include "MoveData.h"
 #include "Modbus_callback.h"
 #include "JsonPack.h"
@@ -37,10 +41,11 @@ void setup() {
   digitalWrite(LED, HIGH);
   S.begin(9600, SWSERIAL_8N1);
   Slave_ID = Start_ID;
-  mb.begin(&S,DE_RE);
+  mb.begin(&S, DE_RE);
   mb.master();
   if (MQTT_Enable) {
     setup_wifi();
+    asynkweb_setup();
     client.setServer(mqtt_server, 1883);
     client.setCallback(callback);
     String MQTT_Topic_s = MQTT_Topic;
@@ -54,6 +59,7 @@ void loop() {
   ArduinoOTA.handle();
   if (millis() - LastScan > Interval) {
     MBslaveQuery(Slave_ID);
+    ArduinoOTA.handle();
   }
   if (MQTT_Enable) {
     if (!client.connected()) {

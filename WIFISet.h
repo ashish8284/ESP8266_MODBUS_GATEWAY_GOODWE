@@ -17,7 +17,6 @@ void setup_wifi() {
   int timeout = 0;
   while (WiFi.status() != WL_CONNECTED) {
     digitalWrite(LED, !digitalRead(LED));
-    delay(100);
     timeout = timeout + 1;
     if (timeout >= WIFI_Reconnect) {
       digitalWrite(LED, HIGH);
@@ -25,6 +24,7 @@ void setup_wifi() {
       return;
     }
     Serial.print(".");
+    ArduinoOTA.handle();
   }
   Serial.println("");
   Serial.println("WiFi connected");
